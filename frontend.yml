@@ -22,15 +22,16 @@
        src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
        dest: /usr/share/nginx/html
        remote_src: yes
+
    - name: Copy the file
      ansible.builtin.copy:
-      src: /home/centos/roboshop-ansible/roboshop.conf
-      dest: /etc/nginx/default.d/roboshop.conf
+       src: roboshop.conf
+       dest: /etc/nginx/default.d/roboshop.conf
 
    - name: Start the service
      ansible.builtin.systemd:
-      name: nginx
-      state: restarted
+       name: nginx
+       state: restarted
 
 #echo "Starting the nginx server"
 #systemctl enable nginx
