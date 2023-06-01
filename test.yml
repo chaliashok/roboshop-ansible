@@ -2,5 +2,5 @@
   hosts: all
   tasks:
     - name: Demo
-      ansible.built.debug:
+      ansible.builtin.debug:
        msg: Hi world
