@@ -1,0 +1,6 @@
+-name: My first code
+ hosts: all
+ tasks:
+    -name: Demo
+    ansible.built.debug:
+    msg: Hi world
