@@ -2,10 +2,10 @@
   ansible.builtin.yum:
     pip:
       name:
-           -python36
-           -gcc
-           -python3-devel
-      state:  installed
+        - python36
+        - gcc
+        - python3-devel
+      state:  present
 
 
 - name: App Pre-requisites
