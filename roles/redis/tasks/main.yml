@@ -1,5 +1,5 @@
 - name: Installing repos
-  ansible.builtin.shell: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+  ansible.builtin.yum: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
   state: latest
 
 - name: Enable Redis
