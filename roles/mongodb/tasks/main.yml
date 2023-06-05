@@ -8,7 +8,7 @@
      state: latest
 - name: Replace value in mongo.repo file
   ansible.builtin.replace:
-     path: /etc/mongo.repo
+     path: /etc/mongod.conf
      regexp: '127.0.0.1'
      replace: '0.0.0.0'
 - name: Start service
