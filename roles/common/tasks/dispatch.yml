@@ -8,17 +8,17 @@
     file: app_presteps.yml
 
 - name: Installing Dependencies
-  ansible.builtin.shell: go mod init {{ component }}
+  ansible.builtin.command: go mod init {{ component }}
   args:
     chdir: /app
 
 - name: Installing Dependencies
-  ansible.builtin.shell: go get
+  ansible.builtin.command: go get
   args:
       chdir: /app
 
 - name: Installing Dependencies
-  ansible.builtin.shell: go build
+  ansible.builtin.command: go build
   args:
     chdir: /app
 
