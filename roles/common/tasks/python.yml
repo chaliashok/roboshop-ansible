@@ -1,10 +1,11 @@
 - name: Installing python
   ansible.builtin.yum:
+    pip:
     name:
            -python36
            -gcc
            -python3-devel
-    state: installed
+    state: present
 
 
 - name: App Pre-requisites
