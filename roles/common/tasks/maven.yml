@@ -10,7 +10,7 @@
 - name: Load maven Dependencies
   ansible.builtin.shell: mvn clean package
   args:
-    chdir: /app
+   chdir: /app
 
 - name: Moving the file
   ansible.builtin.shell: mv target/{{ component }}-1.0.jar {{ component }}.jar
@@ -55,8 +55,8 @@
 #    status_check $?
 #    mv target/${app_name}-1.0.jar ${app_name}.jar &>> ${log_name}
 #    status_check $?
-    echo copying the service file
-    cp /home/centos/robo-shop/${app_name}.service /etc/systemd/system/${app_name}.service &>> ${log_name}
+ #   echo copying the service file
+  #  cp /home/centos/robo-shop/${app_name}.service /etc/systemd/system/${app_name}.service &>> ${log_name}
 #    services_restart
 #    mysql_install
 #    echo restarting shipping
