@@ -10,7 +10,7 @@
 - name: Installing Redis
   ansible.builtin.yum:
    name: redis
-   state: Installed
+   state: installed
 
 - name: Replace value in redis.conf file
   ansible.builtin.replace:
