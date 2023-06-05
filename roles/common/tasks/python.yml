@@ -1,10 +1,10 @@
 - name: Install packages
-  ansible.builtin.pip:
+  ansible.builtin.yum:
     name:
       - python36
       - gcc
       - python3-devel
-    state: present
+    state: installed
 
 - name: App Pre-requisites
   ansible.builtin.import_tasks:
