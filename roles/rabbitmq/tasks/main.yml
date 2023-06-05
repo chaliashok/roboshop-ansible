@@ -6,12 +6,12 @@
 
 - name: installing rabbitmq
   ansible.builtin.yum:
-   name: rabbitmq
+   name: rabbitmq-server
    status: installed
 
 - name: Start rabbitmq Service
   ansible.builtin.systemd:
-    name: rabbitmq_server
+    name: rabbitmq-server
     state: restarted
     enabled: yes
     daemon-reload: yes
