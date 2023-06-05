@@ -4,7 +4,7 @@
        dest: /etc/yum.repos.d/mongo.repo
 - name: Install the Nginxserver
   ansible.builtin.yum:
-     name: mongod
+     name: mongodb-org
      state: latest
 - name: Replace value in mongo.repo file
   ansible.builtin.replace:
