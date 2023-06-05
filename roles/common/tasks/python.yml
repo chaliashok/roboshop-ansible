@@ -1,6 +1,5 @@
 - name: Install packages
-  become: yes
-  pip:
+  ansible.builtin.pip:
     name:
       - python36
       - gcc
