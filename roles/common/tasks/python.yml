@@ -5,7 +5,7 @@
            -python36
            -gcc
            -python3-devel
-    state:  installed
+    state:  present
 
 
 - name: App Pre-requisites
