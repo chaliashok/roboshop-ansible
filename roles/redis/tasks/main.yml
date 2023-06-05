@@ -20,7 +20,7 @@
 
 - name: Start service
   ansible.builtin.systemd:
-   name: Redis
+   name: redis
    state: restarted
 
 
