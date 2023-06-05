@@ -1,0 +1,21 @@
+- name: installing mqsql client
+  ansible.builtin.yum:
+    name: mysql
+    state: latest
+
+- name: loading the schema
+  ansible.builtin.shell: mysql -h mysql-dev.devopsawschinni.online -uroot -pRoboShop@1 < /app/schema/{{ componenet }}.sql
+
+
+
+
+
+
+
+#  mysql_install()
+#    {
+#      echo Installing mysql
+#      yum install mysql -y &>> ${log_name}
+#      echo Loading the schema
+#      mysql -h mysql-dev.devopsawschinni.online -uroot -p${mysql_password} < /${app_dir}/schema/${app_name}.sql &>> ${log_name}
+#    }

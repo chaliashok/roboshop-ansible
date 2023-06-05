@@ -1,0 +1,64 @@
+- name: installing maven
+  ansible.builtin.yum:
+    name: maven
+    state: latest
+
+- name: App Pre-requisites
+  ansible.builtin.import_tasks:
+    file: app_presteps.yml
+
+- name: Load maven Dependencies
+  ansible.builtin.shell: mvn clean package
+  args:
+    chdir: /app
+
+- name: Moving the file
+  ansible.builtin.shell: mv target/{{ component }}-1.0.jar {{ component }}.jar
+  args:
+   chdir: /app
+
+
+- name: SystemD Setup
+  ansible.builtin.import_tasks:
+    file: systemd_setup.yml
+
+- name: mysql
+  ansible.builtin.import_tasks:
+    file: mysql.yml
+
+- name: Start {{ component }} Service
+  ansible.builtin.systemd:
+    name: "{{ component }}"
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
+
+
+
+
+
+
+
+
+
+
+#  echo Installing maven
+#    yum install maven -y &>> ${log_name}
+#    status_check $?
+#    echo adding application user
+#    user_check
+#    Application_setup
+#    status_check $?
+#    echo downlaoding the dependencies
+#    cd ${app_dir}
+#    mvn clean package &>> ${log_name}
+#    status_check $?
+#    mv target/${app_name}-1.0.jar ${app_name}.jar &>> ${log_name}
+#    status_check $?
+    echo copying the service file
+    cp /home/centos/robo-shop/${app_name}.service /etc/systemd/system/${app_name}.service &>> ${log_name}
+#    services_restart
+#    mysql_install
+#    echo restarting shipping
+#    systemctl restart ${app_name} &>> ${log_name}
+#  }
