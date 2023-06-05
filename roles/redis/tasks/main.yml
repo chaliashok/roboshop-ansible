@@ -1,6 +1,6 @@
 - name: Installing repos
   ansible.builtin.shell:
-  name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+   name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
   state: latest
 
 - name: Enable Redis
@@ -11,9 +11,9 @@
    name: redis
    state: Installed
 
-- name: Replace value in mongo.repo file
+- name: Replace value in redis.conf file
   ansible.builtin.replace:
-    path: /etc/mongod.conf
+    path: /etc/redis.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
