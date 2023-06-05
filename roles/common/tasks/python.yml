@@ -1,7 +1,7 @@
 - name: Installing python
   ansible.builtin.yum:
     pip:
-    name:
+      name:
            -python36
            -gcc
            -python3-devel
