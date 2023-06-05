@@ -1,12 +1,10 @@
-- name: Install Python packages using Ansible
-  tasks:
-    - name: Install packages
-      pip:
-        name:
-          - python36
-          - gcc
-          - python3-devel
-        state: present
+- name: Install packages
+  pip:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: present
 
 - name: App Pre-requisites
   ansible.builtin.import_tasks:
