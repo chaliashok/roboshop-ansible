@@ -6,9 +6,9 @@
   ansible.builtin.yum:
      name: mongod
      state: latest
-- name: Replace value in mongod.repo file
+- name: Replace value in mongo.repo file
   ansible.builtin.replace:
-     path: /etc/mongod.repo
+     path: /etc/mongo.repo
      regexp: '127.0.0.1'
      replace: '0.0.0.0'
 - name: Start service
