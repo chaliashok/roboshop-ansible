@@ -15,7 +15,7 @@
 - name: Installing Dependencies
   ansible.builtin.command: go get
   args:
-      chdir: /app
+    chdir: /app
 
 - name: Installing Dependencies
   ansible.builtin.command: go build
