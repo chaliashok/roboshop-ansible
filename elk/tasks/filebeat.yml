@@ -6,7 +6,7 @@
 - name: Install Filebeat
   ansible.builtin.yum:
     name: filebeat
-    state: present
+    state: installed
 
 - name: Copy Filebeat Config
   ansible.builtin.template:
