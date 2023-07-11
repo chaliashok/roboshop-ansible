@@ -13,7 +13,7 @@
     chdir: /app
 
 - name: Installing Dependencies
-  ansible.builtin.command: go get
+  ansible.builtin.shell: go get
   args:
     chdir: /app
 
